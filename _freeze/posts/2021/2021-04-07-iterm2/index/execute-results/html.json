@@ -1,0 +1,14 @@
+{
+  "hash": "e568efce97213e5dfc42919f8fe15a06",
+  "result": {
+    "markdown": "---\ntitle: \"全屏模式下iTerm2标题栏闪动\"\ndescription: \"Bug correction.\"\nauthor: \"Feng Sang\"\ndate: \"4/7/2021\"\ncategories:\n  - bugs\n  - iTerm2\n---\n\n\n## 起因\n\n在更新**BigSur**之后的某一天，突然发现**iTerm2**在全屏模式下，顶部不时会出现一条白色的线闪动。后来在一个论坛里面看到有人说貌似是系统的问题。但是很奇怪，室友的电脑上就没有这样的情况。中间也试过重装系统（PS：强迫症重度患者），但还是会出现。\n\n通过排查，发现只有**iTerm2**配色选择<u>*深色*</u>主题，并且**系统**主题为<u>*浅色*</u>主题时，才会出现上述的问题。\n\n> 系统版本：macOS Big Sur 11.2.3\n\n> iTerm2版本：Build 3.4.4\n\n## 解决\n\n打开iTerm2<u>*偏好*</u>设置，选择<u>*高级*</u>。在<u>*文本框*</u>中输入<u>**big sur**</u>，把通用这一行改为<u>**是**</u>即可。如@fig-a.\n\n\n\n\n## 参考\n\n1. https://blog.csdn.net/lxyoucan/article/details/115085694\n2. https://gitlab.com/gnachman/iterm2/-/issues/9199",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

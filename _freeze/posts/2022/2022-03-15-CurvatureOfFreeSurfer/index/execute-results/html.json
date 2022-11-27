@@ -1,0 +1,14 @@
+{
+  "hash": "16d0d5467ff3496b4fedfc710ac515ac",
+  "result": {
+    "markdown": "---\ntitle: FreeSurfer笔记之二\nauthor: 桑峰\ndate: 2022-03-15\nslug: blog\noutput: html_document\ncategories:\n  - FreeSurfer\ntags:\n  - freesurfer\n  - surface\n  - curvature\n  - vertex\n---\n\n\n\n# The measures about curvatures\n\n## mris_curvature_stats\n\n?h.smoothwm.xxx.crv is the the binary-curvature files where xxx is the different measures. Detailed descriptation is as follows:\n\n> k1 \tmaximum curvature\n>\n> k2 \tminimum curvature\n>\n> K \tGaussian \t= k1*k2\n>\n> H\tMean \t\t= 0.5*(k1+k2)\n>\n> C\tCurvedness \t= sqrt(0.5*(k1*k1+k2*k2))\n>\n> S\tSharpness \t= (k1 - k2)^2\n>\n> BE\tBending Energy \t= k1*k1 + k2*k2\n>\n> SI\tShape Index\t= atan((k1+k2)/(k2-k1))\n>\n> FI\tFolding Index\t= |k1|*(|k1| - |k2|)\n\nIn each file, the corresponding measures for each vertex were saved. And you may read it by read.fs.curv() in R package \"freesurferformats\".\n\n**Example: mris_curvature_stats -F pial/smoothwm/white -G -o xxx sub-2455 rh**\n\nxxx is the file to save descriptation statistical results. -F is flag of surface name, the default is smoothwm in FreeSurfer Version 7.2.0. -G is calculated a series of derived curvature values from current surface file.\n\n## mris_curvature\n\nIt calculated the mean curvature and Gaussian curvature for a surface.\n\n**Example: mris_curvature -w lh.white**\n\nThis command will output the lh.white.H and lh.white.K.\n\n**Example: mris_curvature -w -a 10 lh.white**\n\nThis command smooth 10 for the original outputs.\n\n## The Integrated Rectified Mean/Gaussian Curvature\n\nThe descriptation is MeanCurv is the integral of the absolute value of H and GausCurv is the integral of the absolute value of K.\n\nIt seem is taking the absolute vaule for each vertex and multi with the area, and sum for all vertex on the region. (https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg55168.html, and https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/msg45618.html).\n\n\n\n# Other measures\n\nThe area of a the pial/white is ?h.area.pial/?h.area. The ?h.volume and ?h.thickness is the volume and thickness of cortical.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

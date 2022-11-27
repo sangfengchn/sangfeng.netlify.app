@@ -1,0 +1,14 @@
+{
+  "hash": "0ce0b50a50b715cdb61ee7cdd9a99b1b",
+  "result": {
+    "markdown": "---\ntitle: CIFTI文件的读取和可视化\nauthor: 桑峰\ndate: 2022-02-22\nslug: blog\noutput: html_document\ncategories:\n  - NeuroImage\ntags:\n  - matlab\n  - cifti\n  - surface\n  - visualization\n---\n\n\nCIFTI (Connectivity Informatics Technology Initiative) 是HCP项目中开发的神经影像存储格式。具体可参考2016年Glasser等人发表的文章(Glasser et al., Nature neuroscience, 2015)。开发者在GitHub上提供了读写的MATLAB工具包，可在此处下载：https://github.com/Washington-University/cifti-matlab。\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

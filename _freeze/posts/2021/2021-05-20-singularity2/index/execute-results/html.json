@@ -1,0 +1,14 @@
+{
+  "hash": "8d5adc5dfa5c272272b67c90a044781c",
+  "result": {
+    "markdown": "---\ntitle: Singularity-02-常见问题汇总\nauthor: 桑峰\ndate: 2021-05-20\nslug: blog\noutput: html_document\ncategories:\n  - 服务器\ntags:\n  - singularity\n  - install\n---\n\n\n### ERROR  : Base home directory does not exist within the container: /brain\n\n用沙盒模式创建镜像，然后以交互方式进入镜像后创建/brain目录。之后将沙盒格式的镜像打包为.img文件即可。\n\n```bash\n# 创建沙盒镜像\nsingularity build --sandbox centos7 docker://centos:7\n\n# 以交互方式打开镜像\nsingularity shell --writable centos7/\nSingularity: Invoking an interactive shell within container...\n\n# 镜像内创建缺失目录\nSingularity centos7:~/envs> mkdir /brain\nSingularity centos7:~/envs> exit\n\n# 重新打包镜像\nsingularity build centos7.img centos7/\n```\n\n### ERROR  : Home directory is not owned by calling user: /usr/local/singularity-2.5.2\n\n报错命令：singularity shell smriprep.simg\n\n解决方法：添加--home xxx参数，这里必须是绝对路径。例如：singularity shell --home /babri/sangf/Desktop/test/ smriprep.simg",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

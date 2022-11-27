@@ -1,0 +1,14 @@
+{
+  "hash": "34f909619e5ed48e0ba5f5791b5984e8",
+  "result": {
+    "markdown": "---\ntitle: 笔记-RMarkdown和ggplot2\nauthor: 桑峰\ndate: 2022-07-10\nslug: blog\noutput: html_document\ncategories:\n  - visualization\ntags:\n  - rmarkdown\n  - ggplot2\n---\n\n\n# R Markdown图表交叉引用\n\n在R Markdown中给图表添加引用是首先需要在文件的输出格式设置为以下三种之一。\n\n```r\noutput:\n  # bookdown::word_document2: default\n  bookdown::html_document2: default\n  # bookdown::pdf_document2: default\n```\n\n其次在绘制图表时需要添加标签，如下图\\@ref(fig:fig-demo)所示：\n\n\n::: {.cell}\n::: {.cell-output-display}\n![这是一个示例。](./img/demo.png){#fig-demo width=749}\n:::\n:::\n\n\n其中fig-demo为图片的标签。在文中引用时，输入**\\\\@ref(fig:fig-demo)**即可自动添加图片引用。\n\n# ggplot2添加标签\n\n## 修改坐标轴端点样式\n\n坐标轴端点样式可以通过如下命令修改，下图\\@ref(fig:fig-round)、图\\@ref(fig:fig-butt)和图\\@ref(fig:fig-square)分别是三种端点样式的是示例图。\n\n```r\ntheme(axis.line = element_line(lineend='round'))\n```\n\n\n::: {.cell}\n::: {.cell-output-display}\n![这是round。](./img/demo-round.png){#fig-round width=164}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![这是butt。](./img/demo-butt.png){#fig-butt width=125}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![这是square。](./img/demo-square.png){#fig-square width=142}\n:::\n:::\n\n\n## 给柱状图添加标签\n\n给柱状图每个柱子添加相应的数字标签可以通过geom_text函数完成，显示效果如图\\@ref(fig:fig-label)所示。\n\n```r\ntmpData %>%\n  count(MRIAGE_group, Sex) %>%\n  ggplot(aes(x = MRIAGE_group, y = n, fill = Sex, label = n)) +\n  geom_bar(stat = 'identity', position = position_dodge()) +\n  geom_text(position = position_dodge(width = 0.9), vjust = -0.1) +\n  labs(x = 'Age', y = 'Number') +\n  theme_classic(base_size = 20) +\n  theme(\n    axis.line = element_line(lineend='round'),\n    axis.text.x = element_text(angle = 45, hjust = 0.5, vjust = 0.6))\n```\n\n\n::: {.cell}\n::: {.cell-output-display}\n![柱状图标签。](./img/demo-label.png){#fig-label width=680}\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "4df8207d3b4bb6a9514f21019b32307f",
+  "result": {
+    "markdown": "---\ntitle: 文献笔记-大脑功能网络中体现的左右半球和性别差异\nauthor: 桑峰\ndate: 2021-04-18\nslug: blog\noutput: html_document\ncategories:\n  - 文献笔记\ntags:\n  - rest-fMRI\n  - sex differences\n  - hemsiphere differences\n---\n\n\n### Title\n\n> Hemisphere- and gender-related differences in small-world brain networks: A resting-state functional MRI study\n\n### Results\n\nMale have a large normalized clustering coefficient in the right hemispheric network, but a lower clustering coefficient in the left hemispheric network.\n\nSignificant hemisphere-related differences in the regional nodal characteristics: frontal and occipital regions (leftward asymmetry), temporal regions (rightward asymmetry).\n\n### Conclustions\n\nTopological organization of human brain functional networks is associated with gender and hemispheres.\n\n### Notes\n\nAlterations of brain asymmetries are associated with behavior changes in normal aging and in various neuropsychiatric and neurological diseases such as schizophrenia, stroke and dyslexia.\n\nStatistically, males perform better in right-lateralized visuospatial perception processing, whereas females have advantages in left-lateralized language processing.\n\nSmall-world properties is used to identify the range of sparsity (10%~46%). ($\\gamma>1$, $\\lambda\\approx1$, and $\\sigma>1.2$)\n\nGenerate the comprehensive score by multiplying the sparsity interval and measures at all sparsities.\n\nHub node is at least one standard deviation greater than the average of parameter (x > mean + SD).\n\nAsymmetry score (A) = 100 * (R-L)/(0.5*(R+L)), and positive asymmetry scores indicated right-ward asymmetry and vice versa.\n\n### Links\n\n1. https://doi.org/10.1016/j.neuroimage.2010.07.066",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

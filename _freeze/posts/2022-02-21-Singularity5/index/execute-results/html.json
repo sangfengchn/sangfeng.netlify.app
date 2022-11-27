@@ -1,0 +1,14 @@
+{
+  "hash": "cbf8c285e9603a9a2c9c71c5e7c85baf",
+  "result": {
+    "markdown": "---\ntitle: Singularity-05-Matlab&fmriprep\nauthor: 桑峰\ndate: 2022-02-21\nslug: blog\noutput: html_document\ncategories:\n  - Singularity\ntags:\n  - singularity\n  - matlab\n  - fmriprep\n---\n\n\n# 运行MATLAB\n\n使用matlab镜像运行matlab可使用如下命令：\n\n```bash\nsingularity exec matlab-r2020a.img matlab -batch xxx\n```\n\n其中matlab-r2020a.img为镜像名称，xxx为matlab脚本，不包含.m。\n\n# 运行fmriprep\n\n*脑院高性能平台最高支持fmriprep版本为20.1.3，版本再高会报告I/O异常的错误。*\n\n在镜像中运行fmriprep的命令（不同版本的命令有些许差异，这里以20.1.3为例）如下：\n\n```bash\nsingularity exec fmriprep-20.1.3.simg fmriprep data-test/ fres_data-test/ participant \\\n--skip_bids_validation \\\n--participant_label 12002 \\\n-w fwk_data-test/ \\\n--verbose \\\n--fs-license-file license_lin.txt\n```\n\n其中fmriprep-20.1.3.simg为镜像名称。data-test为存放所有被试的文件夹。\n\n运行smriprep的命令如下：\n\n```bash\nsingularity exec fmriprep-20.1.3.simg smriprep data-test/ sres_data-test/ participant \\\n--pariticipant_label 12002 \\\n-w fwk_data-test/ \\\n--fs-license-file license_lin.txt\n```",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

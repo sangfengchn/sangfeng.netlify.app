@@ -1,0 +1,14 @@
+{
+  "hash": "95918fdf7bff1aaaf59bb2f34ee25f04",
+  "result": {
+    "markdown": "---\ntitle: 下载templateflow\nauthor: 桑峰\ndate: 2022-02-18\nslug: blog\noutput: html_document\ncategories:\n  - NeuroImage\ntags:\n  - templateflow\n  - fmriprep\n---\n\n\ntemplateflow中包含了一些典型的神经影像脑模版，可在fmriprep等工具中使用。本文主要介绍如何下载templateflow。\n\n# 准备\n\nGitHub上有它的仓库，但是那只是DataLab的索引，因此直接下载是不能下载到模版文件的。需要通过DataLab下载。\n\n首先，安装DataLab（以Ubuntu 21.10为例）。\n\n```bash\nconda install -c conda-forge datalad\n# OR\nsudo apt-get install datalab\n```\n\n# 下载\n\n下载索引文件，并使用DataLab下载模版。\n\n```bash\ngit clone https://github.com/templateflow/templateflow.git\ncd templateflow\n# tpl-* 下载所有模版\ndatalad get -r tpl-fsLR\n```\n\n# 通过python下载\n\n笔者在使用datalad下载过程中，会经常遇到进度条长时间不动的情况。而且印象当中，笔者以前用python下载成功过，速度也不是很慢。因此这里将python下载templateflow的方法也追加进来。\n\n首先设置环境变量。\n\n```bash\nexport TEMPLATEFLOW_HOME=$HOME/.templateflow\n```\n\n使用pip安装templateflow包。\n\n```bash\npython -m pip install -U templateflow\n```\n\n下载templateflow。\n\n```bash\npython -c \"from templateflow.api import get; get(['MNI152NLin2009cAsym', 'MNI152NLin6Asym', 'OASIS30ANTs', 'MNIPediatricAsym', 'MNIInfant'])\"\n```\n\n这里可以根据需要下载相应的模版文件。\n\n# 相关链接\n\ntemplateflow项目地址：https://github.com/templateflow/\n\nDataLad网址：https://www.datalad.org/\n\npython下载参考网址：https://fmriprep.org/en/1.5.9/spaces.html",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

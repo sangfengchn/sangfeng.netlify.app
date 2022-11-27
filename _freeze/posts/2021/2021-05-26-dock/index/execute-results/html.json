@@ -1,0 +1,14 @@
+{
+  "hash": "46c51a9c584584bce6bc31b5688bae5c",
+  "result": {
+    "markdown": "---\ntitle: 全屏模式Dock栏不消失\nauthor: 桑峰\ndate: '2021-05-26'\nslug: blog\ncategories:\n  - 工具\ntags:\n  - Dock\n  - bug\n  - Catalina\n---\n\n\n### 环境\n\n> OS: MacOS Catalina (10.15.7)\n\n正常情况是无论Dock是否设置自动隐藏，在全屏模式下，它都会自动隐藏。这里采取的解决方法是重置Dock的默认设置，并重启Dock栏。\n\n### 操作\n\n```bash\ndefaults write com.apple.dock autohide-delay -int 0\ndefaults write com.apple.dock autohide-time-modifier -float 1.0\nkillall Dock\n```\n\n### 参考\n\n[1] https://blog.csdn.net/santa12138/article/details/111293518\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
