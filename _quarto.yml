@@ -1,0 +1,30 @@
+project:
+  type: website
+  resources:
+    - sangf_cv.pdf
+website:
+  title: "Feng Sang"
+  navbar:
+    background: primary
+    search: true
+    right:
+      - text: "HOME"
+        href: index.qmd
+      - text: "PAPERS"
+        href: papers.qmd
+      - text: "BOLGS"
+        href: blogs.qmd
+  page-footer: 
+    left: 
+      - text: "&copy; Copyright 2021-2022, Feng Sang"
+    border: true
+  reader-mode: true
+
+format:
+  html:
+    theme: [sandstone, _variables.scss]
+    css: styles.css
+    toc: true
+
+execute:
+  freeze: auto
