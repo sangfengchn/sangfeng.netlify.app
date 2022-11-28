@@ -2,6 +2,9 @@ project:
   type: website
   resources:
     - sangf_cv.pdf
+  output-dir: docs
+  execute-dir: project
+  
 website:
   title: "Feng Sang"
   navbar:
@@ -19,7 +22,7 @@ website:
       - text: "&copy; Copyright 2021-2022, Feng Sang"
     border: true
   reader-mode: true
-
+  
 format:
   html:
     theme: [sandstone, _variables.scss]

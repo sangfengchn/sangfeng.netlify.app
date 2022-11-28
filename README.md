@@ -1,2 +1,3 @@
-# sangfeng.netlify.io
+# README
+
 The blog of myself.

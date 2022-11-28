@@ -9,6 +9,12 @@ about:
     - icon: github
       text: Github
       href: https://github.com/sangfengchn
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/sengs09360372
+    - icon: linkedin
+      text: LinkedIn
+      href: www.linkedin.com/in/fengsang
     - text: E-mail
       href: mailto:sangfengchn@outlook.com
     - text: CV
