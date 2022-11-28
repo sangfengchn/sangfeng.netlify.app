@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 6a542773-59b6-4aa4-81ab-07c2b08ed2f2
+      url: 'https://thriving-gnome-6a94fd.netlify.app'
