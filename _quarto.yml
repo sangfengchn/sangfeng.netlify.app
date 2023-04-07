@@ -19,7 +19,7 @@ website:
         href: blogs.qmd
   page-footer: 
     left: 
-      - text: "&copy; Copyright 2021-2022, Feng Sang"
+      - text: "&copy; Copyright 2021-2023, Feng Sang"
     border: true
   reader-mode: true
   
