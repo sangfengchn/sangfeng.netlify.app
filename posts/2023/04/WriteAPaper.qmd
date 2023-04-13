@@ -3,7 +3,7 @@ title: "论文写作：完美诞生自计划"
 description: "关于论文写作的方法论。"
 date: 04/13/2023
 categories:
-	- writing
+    - writing
 ---
 
 

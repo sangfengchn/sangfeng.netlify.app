@@ -1,10 +1,80 @@
 [
   {
+    "objectID": "posts/2022/demo/demo.html",
+    "href": "posts/2022/demo/demo.html",
+    "title": "Demo",
+    "section": "",
+    "text": "This is a blog demo."
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html",
+    "href": "posts/2023/04/WriteAPaper.html",
+    "title": "论文写作：完美诞生自计划",
+    "section": "",
+    "text": "本文摘选自《心理学最佳入门》（【美】桑德拉·切卡莱丽 诺兰·怀特著 周仁来等译）。\n不管是短论文还是长论文，写论文包括很多步骤。你应该在截至日期前很久就开始下列步骤（而不是在前一晚才开始）："
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#选择话题",
+    "href": "posts/2023/04/WriteAPaper.html#选择话题",
+    "title": "论文写作：完美诞生自计划",
+    "section": "1. 选择话题",
+    "text": "1. 选择话题\n第一步就是为自己的论文选择一个话题。有些情况下，教师会给出一列备选话题，这能让你的工作简单些。如果没有给出，不要害怕在办公室开放时间内去找教师讨论几个可能的话题。尽量选一个你感兴趣、愿意从中学到东西的话题。学生常犯的错误就是所选话题过于宽泛。比如，“精神发育迟滞”这个话题可以写满一本书。具体一些的话题可以是详细讨论的精神发育迟滞中的一种。再次说明，你的老师可以帮你缩小话题范围。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#做研究",
+    "href": "posts/2023/04/WriteAPaper.html#做研究",
+    "title": "论文写作：完美诞生自计划",
+    "section": "2. 做研究",
+    "text": "2. 做研究\n　 根据你的话题，尽可能多找资料。不要局限于教科书或百科全书。去学校图书馆，请管理员指引你阅读与这个话题有关的一些优秀的科学杂志。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#做笔记",
+    "href": "posts/2023/04/WriteAPaper.html#做笔记",
+    "title": "论文写作：完美诞生自计划",
+    "section": "3. 做笔记",
+    "text": "3. 做笔记\n阅读话题相关内容时，写好笔记卡。在笔记卡片的背面写下你读的这些内容的参考文献。在卡片正面写下你的阅读笔记。有些人喜欢两张笔记卡，一张用来写笔记，另一张写参考文献，这样可以单独分类。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#决定主题",
+    "href": "posts/2023/04/WriteAPaper.html#决定主题",
+    "title": "论文写作：完美诞生自计划",
+    "section": "4. 决定主题",
+    "text": "4. 决定主题\n主题是你的论文的中心信息，是你想与你的读者交流的信息，根据作业性质的差异，可能是与教师或/和同学交流。有些论文很有煽动性，它们试图用某个观点说服读者，比如“精神发育迟滞并不是由免疫导致的”。有些论文是说明性的，向不具备背景知识的读者介绍一个话题，比如“有很多原因可能导致精神发育迟滞”。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#写出提纲",
+    "href": "posts/2023/04/WriteAPaper.html#写出提纲",
+    "title": "论文写作：完美诞生自计划",
+    "section": "5. 写出提纲",
+    "text": "5. 写出提纲\n使用你所有的阅读笔记写出你论文的提纲——一种有关论文如何行进的“地图”。开始的部分是介绍（如对自闭症的简要定义和讨论），然后决定论文的正文部分应该是什么。假设你的论文是关于精神发育迟滞的一种类型的，你的提纲就应该涵盖那种类型的发育迟滞的不同因素。提纲的最后一节应该是总结。比如，你或许会向发育迟滞儿童的家长给出有关如何让孩子尽可能充分发展的建议。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#写出初稿",
+    "href": "posts/2023/04/WriteAPaper.html#写出初稿",
+    "title": "论文写作：完美诞生自计划",
+    "section": "6. 写出初稿",
+    "text": "6. 写出初稿\n根据提纲和笔记的引导写出你的论文。如果使用APA格式，为你所有的陈述和主张填上注解，很多人常犯的错误就是没有注明参考文献（指向特定信息来源的某篇参考文献）。记住，不要抄袭。抄袭是指从某个资料中复制信息但不注明出处，让文章看起来像是你自己写的一样。你在使用某一资料时，需要用自己的语言来解释这一信息并注明出处，就像下面这个例子： 　　 > 在一个比较同卵和异卵双胞胎的研究中，研究者发现，SRRS中列出的生活压力事件时抑郁症开始时间的非常好的预测因子（Kendler & Prescott, 1999）。 > > 参考文献部分需要写清这样的引用：kendler, K. S., & Prescott, C. A. (1999). A population-based twin study of lifetime major depression in men and women. Archives of General Psychology, 56(1), 39-44."
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#放一边",
+    "href": "posts/2023/04/WriteAPaper.html#放一边",
+    "title": "论文写作：完美诞生自计划",
+    "section": "7. 放一边",
+    "text": "7. 放一边\n把它扔在一边放几天（如果你提前写好了论文），不去读。然后再回头浏览一下，标出不太准确，需要更多解释、引用或其他修改的地方。把论文放置几天后，再做这项工作就比较简单了，因为你的错误会变得显而易见。"
+  },
+  {
+    "objectID": "posts/2023/04/WriteAPaper.html#写出修正版",
+    "href": "posts/2023/04/WriteAPaper.html#写出修正版",
+    "title": "论文写作：完美诞生自计划",
+    "section": "8. 写出修正版",
+    "text": "8. 写出修正版\n有些人会写很多稿，有的人只会写初稿和最终稿。不管怎样，认真修改草稿，同时检查参考文献。"
+  },
+  {
     "objectID": "papers.html",
     "href": "papers.html",
     "title": "PAPERS",
     "section": "",
-    "text": "Sang, F.#, Chen, Y#., Chen, K., Dang, M., Gao, S., & Zhang, Z. (2021). Sex Differences in Cortical Morphometry and White Matter Microstructure During Brain Aging and Their Relationships to Cognition. Cerebral Cortex, 31(11), 5253–5262. https://doi.org/10.1093/cercor/bhab155\nGao, S., Chen, Y., Sang, F., Yang, Y., Xia, J., Li, X., Zhang, J., Chen, K., & Zhang, Z. (2019). White Matter Microstructural Change Contributes to Worse Cognitive Function in Patients With Type 2 Diabetes. Diabetes, 68(11), 2085–2094. https://doi.org/10.2337/db19-0233\nYang, Y., Chen, Y., Sang, F., Li, X. & Zhang, Z. Successful or Pathological Cognitive Aging? Converging into A “Frontal Preservation, Temporal Impairment (FPTI)”. Science Bulletin, in press. https://doi.org/10.1016/j.scib.2022.11.004\nZhou, D.-A., Xu, K., Zhao, X., Chen, Q., Sang, F., Fan, D., Su, L., Zhang, Z., Ai, L., & Chen, Y. (2022). Spatial Distribution and Hierarchical Clustering of β-Amyloid and Glucose Metabolism in Alzheimer’s Disease. Frontiers in Aging Neuroscience, 14, 788567. https://doi.org/10.3389/fnagi.2022.788567"
+    "text": "Li, Z., Wang, W., Sang, F., Zhang, Z., & Li, X. (2023). White matter changes underlie hypertension-related cognitive decline in older adults. NeuroImage: Clinical, 103389. https://doi.org/10.1016/j.nicl.2023.103389\n\n\n\n\n\nYang, Y., Chen, Y., Sang, F., Zhao, S., Wang, J., Li, X., … & Zhang, Z. (2022). Successful or pathological cognitive aging? Converging into a” frontal preservation, temporal impairment (FPTI)” hypothesis. Science bulletin, 67(22), 2285-2290. https://doi.org/10.1016/j.scib.2022.11.004\nZhou, D.-A., Xu, K., Zhao, X., Chen, Q., Sang, F., Fan, D., Su, L., Zhang, Z., Ai, L., & Chen, Y. (2022). Spatial Distribution and Hierarchical Clustering of β-Amyloid and Glucose Metabolism in Alzheimer’s Disease. Frontiers in Aging Neuroscience, 14, 788567. https://doi.org/10.3389/fnagi.2022.788567\n\n\n\n\n\nSang, F.#, Chen, Y#., Chen, K., Dang, M., Gao, S., & Zhang, Z. (2021). Sex Differences in Cortical Morphometry and White Matter Microstructure During Brain Aging and Their Relationships to Cognition. Cerebral Cortex, 31(11), 5253–5262. https://doi.org/10.1093/cercor/bhab155\n\n\n\n\n\nGao, S., Chen, Y., Sang, F., Yang, Y., Xia, J., Li, X., Zhang, J., Chen, K., & Zhang, Z. (2019). White Matter Microstructural Change Contributes to Worse Cognitive Function in Patients With Type 2 Diabetes. Diabetes, 68(11), 2085–2094. https://doi.org/10.2337/db19-0233"
   },
   {
     "objectID": "index.html",
@@ -25,6 +95,6 @@
     "href": "blogs.html",
     "title": "BLOGS",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
