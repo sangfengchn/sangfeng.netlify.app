@@ -2,6 +2,9 @@
 title: 笔记-典型相关分析CCA
 description: 利用MATLAB进行CCA分析
 date: 05/10/2023
+author: 
+    - Feng Sang
+    - Zilin Li
 categories: 
     - cca
     - matlab
