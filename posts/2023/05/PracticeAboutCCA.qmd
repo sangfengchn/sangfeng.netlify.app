@@ -22,3 +22,5 @@ CCA中还有一个概念叫*loading*，它是U和A之间（或者V和B）的相�
 1. [https://www.cnblogs.com/pinard/p/6288716.html](https://www.cnblogs.com/pinard/p/6288716.html)
 
 2. [https://ww2.mathworks.cn/help/stats/canoncorr.html](https://ww2.mathworks.cn/help/stats/canoncorr.html)
+
+3. [https://blog.csdn.net/NoBuggie/article/details/102830981](https://blog.csdn.net/NoBuggie/article/details/102830981)
