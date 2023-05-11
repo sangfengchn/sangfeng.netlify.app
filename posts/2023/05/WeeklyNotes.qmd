@@ -1,0 +1,17 @@
+---
+title: 本周总结
+author: Feng Sang
+description: 本周内的ticks总结。
+date: 05/11/2023
+categories:
+    - ticks
+---
+
+## slumr作业调度系统
+
+当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：
+
+1. 用更短的名字给作业命名；
+
+2. 用命令**squeue --yaml | grep <作业名的部分字符串>**查询；
+
