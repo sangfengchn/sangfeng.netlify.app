@@ -84,6 +84,20 @@
     "text": "典型相关分析（Canonical Correlation Analysis, CCA）可以计算两组变量（每组变量包含多个变量）之间的相关。参考Pearson相关，它只能计算两个变量之间的相关。本文主要介绍笔者在使用CCA的过程中的理解，可能存在不准确的地方。详细的原理，请参考：https://www.cnblogs.com/pinard/p/6288716.html。\n\n以下为笔者个人的理解，请批判性地阅读！\n\n对于两组变量X和Y，其中每组中包含多个变量（\\(X_1, X_2, ..., X_n\\)和\\(Y_1, Y_2, ..., Y_m\\)）。CCA的任务是为每组变量找到一些新的变量（U和V），使得两组新的变量之间的相关值最大。其中新产生的变量叫做canonical variabel，它的个数取决于两组原始变量中变量数较少的那组变量的个数（即\\(min(n, m)\\)）。另外，新的变量U和V分别是X和Y中各个变量的线性组合，其中的系数叫做canoncial coefficient（A和B）。\nMATALB中可以用canoncorr函数来做CCA。它输入参数为X和Y，输出是A，B，r，U，V和stats。其中A，B，U，V代表的含义如上所述。r表示canonical variable之间（U和V）的相关系数，它的个数与U和V中的变量个数（列数）相同，也等于\\(min(n, m)\\)。stats中是一些统计量和显著性。\nCCA中还有一个概念叫loading，它是U和A之间（或者V和B）的相关（U中的每一个变量分别和X中的每一个变量计算相关）。初步尝试后发现，A中较大值对应在X中的特征和U的相关会更大。因为A中越大的值对应的X中的变量，实际对U的影响也会越大。\n\n参考\n\nhttps://www.cnblogs.com/pinard/p/6288716.html\nhttps://ww2.mathworks.cn/help/stats/canoncorr.html\nhttps://blog.csdn.net/NoBuggie/article/details/102830981"
   },
   {
+    "objectID": "posts/2023/05/WeeklyNotes.html",
+    "href": "posts/2023/05/WeeklyNotes.html",
+    "title": "本周总结",
+    "section": "",
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的名字给作业命名；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+  },
+  {
+    "objectID": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
+    "href": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
+    "title": "本周总结",
+    "section": "",
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的名字给作业命名；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+  },
+  {
     "objectID": "papers.html",
     "href": "papers.html",
     "title": "PAPERS",
@@ -130,6 +144,6 @@
     "href": "blogs.html",
     "title": "BLOGS",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周总结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
