@@ -98,6 +98,13 @@
     "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的名字给作业命名；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
   },
   {
+    "objectID": "posts/2023/05/WeeklyNotes.html#图片分辨率和尺寸",
+    "href": "posts/2023/05/WeeklyNotes.html#图片分辨率和尺寸",
+    "title": "本周总结",
+    "section": "图片分辨率和尺寸",
+    "text": "图片分辨率和尺寸\n图片的DPI表示单位英寸上的像素数，DPI越高图像显示越细腻。在给定像素数和DPI的情况下可以用像素数除以DPI得到英寸数，再乘以2.54厘米得到厘米单位下的图片某一边的长度。"
+  },
+  {
     "objectID": "papers.html",
     "href": "papers.html",
     "title": "PAPERS",
