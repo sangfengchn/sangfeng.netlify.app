@@ -18,3 +18,40 @@ categories:
 ## 图片分辨率和尺寸
 
 图片的DPI表示单位英寸上的像素数，DPI越高图像显示越细腻。在给定像素数和DPI的情况下可以用像素数除以DPI得到英寸数，再乘以2.54厘米得到厘米单位下的图片某一边的长度。
+
+## GRETNA中AUC指标计算
+
+GRETNA中当设置了多个threshold后，会自动输出一个对应指标的AUC值。计算方法是将指标作为y轴，threshold作为x轴作折线图。然后计算每一个梯形的面积后求和得到AUC值。但是当threshold设置过小是，部分网络指标计算会出现Inf，而对应的AUC中会出现缺失值。这里提供一种解决方法，即可以尝试去掉Inf对应阈值下的指标，再去计算AUC。代码如下：
+
+```python
+import os
+from os.path import join as opj
+from glob import glob
+import numpy as np
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+
+der = "results/NodalShortestPath"
+nodalPaths = [f"{der}/NLp_Thres{i+1:03d}.txt" for i in range(36)]
+nodalData = []
+for i in nodalPaths:
+    nodalData.append(np.loadtxt(i))
+nodalData = np.array(nodalData)
+
+# each sub
+tmpRes = []
+for i in range(nodalData.shape[1]):
+    # each region
+    tmpSub = []
+    for j in range(nodalData.shape[2]):
+        tmpSubData = nodalData[:, i, j]
+        tmpSubData = tmpSubData[~np.isnan(tmpSubData)]
+        tmpSubData = tmpSubData[~np.isinf(tmpSubData)]
+        tmpSubAuc = np.trapz(tmpSubData, dx=0.01)    
+        tmpSub.append(tmpSubAuc)
+    tmpRes.append(tmpSub)
+tmpRes = np.array(tmpRes)
+# logging.info(tmpRes.shape)
+np.savetxt(opj(der, "NLp_AUC.txt"), tmpRes, fmt="%.16e", delimiter="\t")
+logging.info("Done.")
+```
