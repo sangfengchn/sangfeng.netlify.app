@@ -86,30 +86,37 @@
   {
     "objectID": "posts/2023/05/WeeklyNotes.html",
     "href": "posts/2023/05/WeeklyNotes.html",
-    "title": "本周总结",
+    "title": "本周小结",
     "section": "",
-    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的名字给作业命名；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
   },
   {
     "objectID": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
     "href": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
-    "title": "本周总结",
+    "title": "本周小结",
     "section": "",
-    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的名字给作业命名；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
   },
   {
     "objectID": "posts/2023/05/WeeklyNotes.html#图片分辨率和尺寸",
     "href": "posts/2023/05/WeeklyNotes.html#图片分辨率和尺寸",
-    "title": "本周总结",
+    "title": "本周小结",
     "section": "图片分辨率和尺寸",
     "text": "图片分辨率和尺寸\n图片的DPI表示单位英寸上的像素数，DPI越高图像显示越细腻。在给定像素数和DPI的情况下可以用像素数除以DPI得到英寸数，再乘以2.54厘米得到厘米单位下的图片某一边的长度。"
   },
   {
     "objectID": "posts/2023/05/WeeklyNotes.html#gretna中auc指标计算",
     "href": "posts/2023/05/WeeklyNotes.html#gretna中auc指标计算",
-    "title": "本周总结",
+    "title": "本周小结",
     "section": "GRETNA中AUC指标计算",
-    "text": "GRETNA中AUC指标计算\nGRETNA中当设置了多个threshold后，会自动输出一个对应指标的AUC值。计算方法是将指标作为y轴，threshold作为x轴作折线图。然后计算每一个梯形的面积后求和得到AUC值。但是当threshold设置过小是，部分网络指标计算会出现Inf，而对应的AUC中会出现缺失值。这里提供一种解决方法，即可以尝试去掉Inf对应阈值下的指标，再去计算AUC。代码如下：\nimport os\nfrom os.path import join as opj\nfrom glob import glob\nimport numpy as np\nimport logging\nlogging.basicConfig(level=logging.INFO, format=\"%(asctime)s %(message)s\")\n\nder = \"results/NodalShortestPath\"\nnodalPaths = [f\"{der}/NLp_Thres{i+1:03d}.txt\" for i in range(36)]\nnodalData = []\nfor i in nodalPaths:\n    nodalData.append(np.loadtxt(i))\nnodalData = np.array(nodalData)\n\n# each sub\ntmpRes = []\nfor i in range(nodalData.shape[1]):\n    # each region\n    tmpSub = []\n    for j in range(nodalData.shape[2]):\n        tmpSubData = nodalData[:, i, j]\n        tmpSubData = tmpSubData[~np.isnan(tmpSubData)]\n        tmpSubData = tmpSubData[~np.isinf(tmpSubData)]\n        tmpSubAuc = np.trapz(tmpSubData, dx=0.01)    \n        tmpSub.append(tmpSubAuc)\n    tmpRes.append(tmpSub)\ntmpRes = np.array(tmpRes)\n# logging.info(tmpRes.shape)\nnp.savetxt(opj(der, \"NLp_AUC.txt\"), tmpRes, fmt=\"%.16e\", delimiter=\"\\t\")\nlogging.info(\"Done.\")"
+    "text": "GRETNA中AUC指标计算\nGRETNA中当设置了多个threshold后，会自动输出一个对应指标的AUC值。计算方法是将指标作为y轴，threshold作为x轴作折线图。然后计算每一个梯形的面积后求和得到AUC值。但是当threshold设置过小是，部分网络指标计算会出现Inf，而对应的AUC中会出现缺失值。这里提供一种解决方法，即去掉Inf对应阈值下的指标，再去计算AUC。代码如下：\nimport os\nfrom os.path import join as opj\nfrom glob import glob\nimport numpy as np\nimport logging\nlogging.basicConfig(level=logging.INFO, format=\"%(asctime)s %(message)s\")\n\nder = \"results/NodalShortestPath\"\nnodalPaths = [f\"{der}/NLp_Thres{i+1:03d}.txt\" for i in range(36)]\nnodalData = []\nfor i in nodalPaths:\n    nodalData.append(np.loadtxt(i))\nnodalData = np.array(nodalData)\n\n# each sub\ntmpRes = []\nfor i in range(nodalData.shape[1]):\n    # each region\n    tmpSub = []\n    for j in range(nodalData.shape[2]):\n        tmpSubData = nodalData[:, i, j]\n        tmpSubData = tmpSubData[~np.isnan(tmpSubData)]\n        tmpSubData = tmpSubData[~np.isinf(tmpSubData)]\n        tmpSubAuc = np.trapz(tmpSubData, dx=0.01)    \n        tmpSub.append(tmpSubAuc)\n    tmpRes.append(tmpSub)\ntmpRes = np.array(tmpRes)\n# logging.info(tmpRes.shape)\nnp.savetxt(opj(der, \"NLp_AUC.txt\"), tmpRes, fmt=\"%.16e\", delimiter=\"\\t\")\nlogging.info(\"Done.\")"
+  },
+  {
+    "objectID": "posts/2023/05/WeeklyNotes.html#linux系统的机器间互传数据",
+    "href": "posts/2023/05/WeeklyNotes.html#linux系统的机器间互传数据",
+    "title": "本周小结",
+    "section": "Linux系统的机器间互传数据",
+    "text": "Linux系统的机器间互传数据\n神经影像领域中有一些软件只有linux/unix系统下可运行的版本，而且数据量一般也比较大。在不同机器间传输文件也是一项很常见的操作。scp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：\nscp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址。如下：\nscp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：\nscp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：\nrsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
   },
   {
     "objectID": "papers.html",
@@ -158,6 +165,6 @@
     "href": "blogs.html",
     "title": "BLOGS",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周总结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
