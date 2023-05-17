@@ -116,7 +116,7 @@
     "href": "posts/2023/05/WeeklyNotes.html#linux系统的机器间互传数据",
     "title": "本周小结",
     "section": "Linux系统的机器间互传数据",
-    "text": "Linux系统的机器间互传数据\n神经影像领域中有一些软件只有linux/unix系统下可运行的版本，而且数据量一般也比较大。在不同机器间传输文件也是一项很常见的操作。scp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：\nscp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址。如下：\nscp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：\nscp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：\nrsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
+    "text": "Linux系统的机器间互传数据\n神经影像领域中有一些软件只有linux/unix系统下可运行的版本，而且数据量一般也比较大。在不同机器间传输文件也是一项很常见的操作。scp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：scp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址，例如：scp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：scp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：rsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
   },
   {
     "objectID": "papers.html",
