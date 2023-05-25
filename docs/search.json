@@ -84,18 +84,32 @@
     "text": "典型相关分析（Canonical Correlation Analysis, CCA）可以计算两组变量（每组变量包含多个变量）之间的相关。参考Pearson相关，它只能计算两个变量之间的相关。本文主要介绍笔者在使用CCA的过程中的理解，可能存在不准确的地方。详细的原理，请参考：https://www.cnblogs.com/pinard/p/6288716.html。\n\n以下为笔者个人的理解，请批判性地阅读！\n\n对于两组变量X和Y，其中每组中包含多个变量（\\(X_1, X_2, ..., X_n\\)和\\(Y_1, Y_2, ..., Y_m\\)）。CCA的任务是为每组变量找到一些新的变量（U和V），使得两组新的变量之间的相关值最大。其中新产生的变量叫做canonical variabel，它的个数取决于两组原始变量中变量数较少的那组变量的个数（即\\(min(n, m)\\)）。另外，新的变量U和V分别是X和Y中各个变量的线性组合，其中的系数叫做canoncial coefficient（A和B）。\nMATALB中可以用canoncorr函数来做CCA。它输入参数为X和Y，输出是A，B，r，U，V和stats。其中A，B，U，V代表的含义如上所述。r表示canonical variable之间（U和V）的相关系数，它的个数与U和V中的变量个数（列数）相同，也等于\\(min(n, m)\\)。stats中是一些统计量和显著性。\nCCA中还有一个概念叫loading，它是U和A之间（或者V和B）的相关（U中的每一个变量分别和X中的每一个变量计算相关）。初步尝试后发现，A中较大值对应在X中的特征和U的相关会更大。因为A中越大的值对应的X中的变量，实际对U的影响也会越大。\n\n参考\n\nhttps://www.cnblogs.com/pinard/p/6288716.html\nhttps://ww2.mathworks.cn/help/stats/canoncorr.html\nhttps://blog.csdn.net/NoBuggie/article/details/102830981"
   },
   {
+    "objectID": "posts/2023/05/WeeklyNotes21.html",
+    "href": "posts/2023/05/WeeklyNotes21.html",
+    "title": "本周小结",
+    "section": "",
+    "text": "问题：假设有两组数据X和Y，要求转换Y，使得转换后的Y曲线下面积与X的曲线下面积相同。\n解：首先曲线下面积可以通过将一系列梯形面积求和后得到。假设X和Y分别有三个数据点。如图1所示。通过梯形法计算X和Y对应的曲线下面积分别为Sx和Sy。要使得Sx和Sy相等，简单地，可以对Y中每一个数值都乘以X和Y的曲线下面积的比值得到转换后的Y。matlab代码如下：\n\n\n\n梯形法栗子\n\n\nX = randn([100, 1]);\nY = randn([150, 1]) * 20;\n\n# 梯形法计算面积\nSx = trapz(X);\nSy = trapz(Y);\n\nnewY = Y * Sx / Sy;\n\nSyn = trapz(newY);"
+  },
+  {
+    "objectID": "posts/2023/05/WeeklyNotes21.html#转换数据",
+    "href": "posts/2023/05/WeeklyNotes21.html#转换数据",
+    "title": "本周小结",
+    "section": "",
+    "text": "问题：假设有两组数据X和Y，要求转换Y，使得转换后的Y曲线下面积与X的曲线下面积相同。\n解：首先曲线下面积可以通过将一系列梯形面积求和后得到。假设X和Y分别有三个数据点。如图1所示。通过梯形法计算X和Y对应的曲线下面积分别为Sx和Sy。要使得Sx和Sy相等，简单地，可以对Y中每一个数值都乘以X和Y的曲线下面积的比值得到转换后的Y。matlab代码如下：\n\n\n\n梯形法栗子\n\n\nX = randn([100, 1]);\nY = randn([150, 1]) * 20;\n\n# 梯形法计算面积\nSx = trapz(X);\nSy = trapz(Y);\n\nnewY = Y * Sx / Sy;\n\nSyn = trapz(newY);"
+  },
+  {
     "objectID": "posts/2023/05/WeeklyNotes.html",
     "href": "posts/2023/05/WeeklyNotes.html",
     "title": "本周小结",
     "section": "",
-    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue --yaml | grep &lt;作业名的部分字符串&gt;查询；"
   },
   {
     "objectID": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
     "href": "posts/2023/05/WeeklyNotes.html#slumr作业调度系统",
     "title": "本周小结",
     "section": "",
-    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue –yaml | grep &lt;作业名的部分字符串&gt;查询；"
+    "text": "当因作业名太长，而无法用squeue命令看到对应作业的name时，可采用以下方法：\n\n用更短的且更容易区分的名字给作业命名（PS. 这不是废话嘛）；\n用命令squeue --yaml | grep &lt;作业名的部分字符串&gt;查询；"
   },
   {
     "objectID": "posts/2023/05/WeeklyNotes.html#图片分辨率和尺寸",
@@ -116,7 +130,7 @@
     "href": "posts/2023/05/WeeklyNotes.html#linux系统的机器间互传数据",
     "title": "本周小结",
     "section": "Linux系统的机器间互传数据",
-    "text": "Linux系统的机器间互传数据\n神经影像领域中有一些软件只有linux/unix系统下可运行的版本，而且数据量一般也比较大。在不同机器间传输文件也是一项很常见的操作。scp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：scp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址，例如：scp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：scp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：rsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
+    "text": "Linux系统的机器间互传数据\nscp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：scp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址，例如：scp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：scp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：rsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
   },
   {
     "objectID": "papers.html",
@@ -165,6 +179,6 @@
     "href": "blogs.html",
     "title": "BLOGS",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 25, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
