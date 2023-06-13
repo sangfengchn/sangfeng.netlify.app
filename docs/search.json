@@ -133,6 +133,20 @@
     "text": "Linux系统的机器间互传数据\nscp和rsync命令可以实现在不同机器（linux/unix系统）之间的文件传输。假设当前要把A机器的a用户的文件/a/src，传输到B机器的b用户的/b/dst/文件夹下，具体用法如下：scp /a/src b@B:/b/dst/\n如果是用B机器上b用户登陆的，则需要将命令的源文件中添加用户名和机器IP地址，例如：scp a@A:/a/src /b/dst/\n如果/a/src是文件夹，则需要给scp命令加上参数-r；如果B机器ssh的端口号不是默认的22，则需要给scp用-P参数指定目标机器的ssh服务端口号。例如：scp -P &lt;目标机器（B机器）的ssh服务的端口号&gt; -r /a/src b@B:/b/dst/\n详细的参数说明请参考：https://www.runoob.com/linux/linux-comm-scp.html\nrsync命令也可以实现在不同机器之间文件的同步传输。用法如下：rsync &lt;src&gt; &lt;dst&gt;\n但通常都会使用-av参数来递归地进行同步（同步文件夹）和文件的元信息（-a参数的效果，-v则是显示当前正在同步的文件，方便监视进度）。另外可以使用-e 'ssh -P xxx'来指定目标机器ssh服务的端口号。更详细的说明请参考：https://www.ruanyifeng.com/blog/2020/08/rsync.html"
   },
   {
+    "objectID": "posts/2023/06/Notes_202206.html",
+    "href": "posts/2023/06/Notes_202206.html",
+    "title": "本周小结",
+    "section": "",
+    "text": "假设有两个集合X和Y，它们的DICE分数是X和Y交集的元素个数与X和Y并集元素个数比值再乘2. 它的显著性可以通过将X和Y的元素放在一起后，再随机抽取出与X和Y集合相同元素的集合，并计算DICE分数。通过多次抽取，构建DICE的零分布，并计算真实的DICE分数在分布中的位置，来得到显著性。"
+  },
+  {
+    "objectID": "posts/2023/06/Notes_202206.html#两个集合计算dice分数并评估显著性",
+    "href": "posts/2023/06/Notes_202206.html#两个集合计算dice分数并评估显著性",
+    "title": "本周小结",
+    "section": "",
+    "text": "假设有两个集合X和Y，它们的DICE分数是X和Y交集的元素个数与X和Y并集元素个数比值再乘2. 它的显著性可以通过将X和Y的元素放在一起后，再随机抽取出与X和Y集合相同元素的集合，并计算DICE分数。通过多次抽取，构建DICE的零分布，并计算真实的DICE分数在分布中的位置，来得到显著性。"
+  },
+  {
     "objectID": "papers.html",
     "href": "papers.html",
     "title": "PAPERS",
@@ -179,6 +193,6 @@
     "href": "blogs.html",
     "title": "BLOGS",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 25, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nJun 13, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 25, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n本周小结\n\n\n\n\n\n\n\nticks\n\n\n\n\n本周内的ticks总结。\n\n\n\n\n\n\nMay 11, 2023\n\n\nFeng Sang\n\n\n\n\n\n\n  \n\n\n\n\n笔记-典型相关分析CCA\n\n\n\n\n\n\n\ncca\n\n\nmatlab\n\n\n\n\n利用MATLAB进行CCA分析\n\n\n\n\n\n\nMay 10, 2023\n\n\nFeng Sang, Zilin Li\n\n\n\n\n\n\n  \n\n\n\n\n论文写作：完美诞生自计划\n\n\n\n\n\n\n\nwriting\n\n\n\n\n关于论文写作的方法论。\n\n\n\n\n\n\nApr 13, 2023\n\n\n\n\n\n\n  \n\n\n\n\nDemo\n\n\n\n\n\n\n\ndemo\n\n\nblog\n\n\n\n\nThis is a bolg demo.\n\n\n\n\n\n\nNov 28, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
