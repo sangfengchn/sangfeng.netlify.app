@@ -11,6 +11,10 @@ title-block-banner: true
 - Li, Z., Wang, W., Sang, F., Zhang, Z., & Li, X. (2023). White matter changes underlie hypertension-related cognitive decline in older adults. NeuroImage: Clinical, 103389.
  [https://doi.org/10.1016/j.nicl.2023.103389](https://doi.org/10.1016/j.nicl.2023.103389)
 
+- Sang, F., Xu, K., & Chen, Y. (2023). Brain Network Organization and Aging. In Cognitive Aging and Brain Health (pp. 99-108). Singapore: Springer Nature Singapore. [https://doi.org/10.1007/978-981-99-1627-6_8](https://doi.org/10.1007/978-981-99-1627-6_8)
+
+- Dang, M., Sang, F., Long, S., & Chen, Y. (2023). The Aging Patterns of Brain Structure, Function, and Energy Metabolism. In Cognitive Aging and Brain Health (pp. 85-97). Singapore: Springer Nature Singapore. [https://doi.org/10.1007/978-981-99-1627-6_7](https://doi.org/10.1007/978-981-99-1627-6_7)
+
 ### 2022
 
 - Yang, Y., Chen, Y., Sang, F., Zhao, S., Wang, J., Li, X., ... & Zhang, Z. (2022). Successful or pathological cognitive aging? Converging into a" frontal preservation, temporal impairment (FPTI)" hypothesis. Science bulletin, 67(22), 2285-2290. [https://doi.org/10.1016/j.scib.2022.11.004](https://doi.org/10.1016/j.scib.2022.11.004)
