@@ -22,7 +22,10 @@ website:
       - text: "&copy; Copyright 2021-2023, Feng Sang"
     border: true
   reader-mode: true
-  
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: false
 format:
   html:
     theme: [sandstone, _variables.scss]
