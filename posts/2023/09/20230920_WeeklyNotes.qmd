@@ -9,12 +9,14 @@ categories:
 
 There is a simple example below.
 
-```{R}
+```R
 library(tidyverse)
 
 a <- tibble()
 a <- a %>%
   bind_rows(list(A = 1, B = 2))
-
-a
 ```
+
+This is the results:
+
+![A simple example](./fig/20230920_fig1.png)
